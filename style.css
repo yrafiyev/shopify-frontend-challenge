@@ -1,0 +1,13 @@
+body{
+  background: #000639;
+  font-family: helvetica;
+}
+
+.footer{
+    position:absolute;
+    background: white;
+    bottom:20px;
+    right:50%;
+    left:50%;
+	color: white;
+}

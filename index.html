@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./style.css">
+	<title>Shopify's newsletter</title>
+  
+    <script type="text/javascript">
+
+		function submitForm(event){
+			if(!$("#customer_email").val().match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")){
+				$("#wrong_email").css("display", "block");
+			} else {
+				$("#wrong_email").css("display", "none");
+			}
+			
+			if($("#interest option:selected").val() == "Interested in..."){
+				$("#wrong_interest").css("display", "block");
+			} else {
+				$("#wrong_interest").css("display", "none");
+			}
+			
+			// All entries are coorect
+			if($("#customer_email").val().match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$") && $("#interest option:selected").val() != "Interested in...") {
+				console.log("email: " + $("#customer_email").val() + ", interested in: " + $("#interest option:selected").val());
+			}
+		}
+    </script>
+  
+</head>
+<body>
+  <form action="#" onsubmit="return submitForm()">
+	  <div class="container">
+		  <div class="row">
+			<div class="col-2"> </div>
+			<div class="col-8">
+			  
+			  <div class="row mb-2 mt-5" style="color: white; font-size: 24px">
+				<b>Stay up to date with ecommerce trends <br> with Shopify's newslettter</b>
+			  </div>
+			  
+			  <div class="row">
+				<hr style="width: 8%; background: #7ab55c; float: left; height: 1px; margin: 0 !important"> <br>
+			  </div>
+			  
+			  <div class="row mt-4 mb-3" style="color: white; font-size: 16px">
+				Subscribe for free marketing tips
+			  </div>
+			  
+			  <div class="row">
+				
+				<div class="col-7" style="padding: 0 !important; margin: 0 !important">
+				    <div class="form-group">
+					   <input id="customer_email" class="form-control" style="color: #7b7b7b; font-size: 16px; width: 100% !important" id="email" placeholder="Email address">
+				    </div>
+					<div id="wrong_email" style="display: none; color: red; margin-top: -14px !important; padding: 0 !important">
+						Please enter a valid email address
+					</div>
+				</div>
+				
+				<div class="col-1"> </div>
+				<div class="col-4" style="padding: 0 !important">
+					  <div class="form-group">
+						<div class="form-group">
+						<span class="caret"></span>
+						  <select class="form-control" id="interest" style="background: white; color: #7b7b7b; font-size: 16px; width: 100% !important">
+							<option selected="selected" style="display: none">Interested in...</option>
+							<option>Java</option>
+							<option>Python</option>
+							<option>C++</option>
+							<option>JavaScript</option>
+						  </select>
+						</div>
+						
+					  </div>
+					  <div id="wrong_interest" style="display: none; color: red; margin-top: -14px !important; padding: 0 !important">
+					      Please select your interest
+					  </div>
+				</div>
+				</div>
+
+			  <div class="row mt-4">
+				<button type="submit" class="btn btn-default" style="background: #5c6ac4; width: 100%; color: white"><b>Sign up now</b></button>
+			  </div>
+			  
+			</div>
+			<div class="col-2"> </div>
+		  </div>
+	</div>
+ </form>
+  
+<div class="footer">
+	<a href='#' style="color: white"> <u> Unsubscribe </u> </a>
+</div>
+</body>
+</html>
